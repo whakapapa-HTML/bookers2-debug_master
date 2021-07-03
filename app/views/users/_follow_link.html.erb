@@ -1,0 +1,12 @@
+<% unless current_user == user %>
+  <div id="follow_form">
+    
+  <% if current_user.following?(user) %>
+  <% id_number %>
+      <%= link_to "フォローを外す", user_relationship_path(user.id, id: id_number), method: :delete %>
+  <% else %>
+        <%= link_to "フォローする" , user_relationships_path(user.id), method: :post %> 
+  
+  <% end %>
+    </div>
+<% end %>

@@ -13,7 +13,12 @@
         <td><%= user.name %></td>
         <td>フォーロー数:<%= user.following.count %></td>
         <td>フォロワー数:<%= user.followers.count %></td>
-        
+        <% current_user.active_relationships.each do |r| %>
+        <% if (r.followed_id == user.id) %>
+        <% @id_number = r.id %>
+        <% end %>
+        <% end %> 
+        <td><%= render "follow_link", user: user, id_number: @id_number %></td>
         <td><%= link_to 'Show', user_path(user), class: "user_#{user.id}" %></td>
       </tr>
     <% end %>
