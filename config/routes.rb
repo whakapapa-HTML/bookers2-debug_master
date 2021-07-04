@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+  get 'likes/destroy'
   get 'searches/search'
   devise_for :users
   resources :users,only: [:show,:index,:edit,:update] do
@@ -7,15 +9,11 @@ Rails.application.routes.draw do
           get :following, :followers
       end
     end
-   resources :books do
-    resource :favorites, only: [:create,:destroy] do
-      collection do
-        post 'index_create'
-        delete 'index_destroy'
-        
-      end
-    end
-     resources :book_comments, only: [:create, :destroy]
+    
+  resources :books do
+   resource :favorites, only: [:create,:destroy] 
+
+   resources :book_comments, only: [:create, :destroy]
    end  
   root 'homes#top'
   get 'homes/about' => 'homes#about'
