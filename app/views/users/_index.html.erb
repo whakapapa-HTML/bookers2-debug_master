@@ -17,7 +17,7 @@
         <% if (r.followed_id == user.id) %>
         <% @id_number = r.id %>
         <% end %>
-        <% end %> 
+        <% end %>
         <td><%= render "follow_link", user: user, id_number: @id_number %></td>
         <td><%= link_to 'Show', user_path(user), class: "user_#{user.id}" %></td>
       </tr>
