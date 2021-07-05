@@ -1,0 +1,6 @@
+<%= form_with model:[book,book_comment], url: book_book_comments_path(@book),remote: true do |f| %>
+  <div id="comment">
+      <%= f.text_area :comment %></br>
+  </div>
+    <%= f.submit "送信" %>
+<% end %>
