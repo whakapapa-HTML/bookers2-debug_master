@@ -18,7 +18,7 @@ class Book < ApplicationRecord
             @book = Book.where("title LIKE ?", "%#{words}")
         elsif searches ==  "forward_match"
             @book = Book.where("title LIKE ?", "#{words}%")
-        elsif searches == "patial_match"
+        elsif searches == "ptial_match"
             @book = Book.where("title LIKE ?", "%#{words}%")
         end
     end

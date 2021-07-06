@@ -40,7 +40,7 @@ class User < ApplicationRecord
         @user = User.where("name LIKE ?","%#{words}")
       elsif searches == "forward_match"
         @user = User.where("name LIKE ?","#{words}%")
-      elsif searches == "partial_match"
+      elsif searches == "pertial_match"
         @user = User.where("name LIKE ?","%#{words}%")
       end
     end
