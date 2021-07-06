@@ -1,22 +1,22 @@
 <% if @range == "User" %>
     <table class='table'>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Introduction</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-     <% @users.each do |user| %>  
-     <tr>
-         <td><%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %></td>
-         <td><%= user.name %></td>
-         <td><%= user.introduction %></td>
-     </tr>
-    <% end %>
-  </tbody>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+           <th>Introduction</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+         <% @users.each do |user| %>  
+         <tr>
+             <td><%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %></td>
+             <td><%= user.name %></td>
+             <td><%= user.introduction %></td>
+         </tr>
+        <% end %>
+      </tbody>
   </table>
   
 <% else %>
