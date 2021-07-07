@@ -26,8 +26,13 @@
           <div id="likes_buttons_<%= @book.id %>">  
             <%= render 'favorites/favorite-btn', book: @book %>
           </div>
+<<<<<<< HEAD
             
           <td class="comments-count">コメント件数:<%= @book.book_comments.count %></td>
+=======
+          <td>コメント件数:<%= @book.book_comments.count %></td>
+          <td class="book-evaluation" data-score="<%= @book.evaluation %>"></td>
+>>>>>>> star-review
         </tr>
       </table>
       
@@ -44,6 +49,12 @@
   </div>
 </div>
 
-
-
-
+<script>
+  $('.book-evaluation').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>
