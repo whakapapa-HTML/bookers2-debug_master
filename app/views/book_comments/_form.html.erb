@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%= form_with model:[book,book_comment], url: book_book_comments_path(book),remote: true do |f| %>
+=======
+<%= form_with model:[book,book_comment], url: book_book_comments_path(@book),remote: true do |f| %>
+>>>>>>> star-review
   <div id="comment">
       <%= f.text_area :comment %></br>
   </div>
