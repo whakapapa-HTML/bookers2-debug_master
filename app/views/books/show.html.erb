@@ -26,21 +26,13 @@
           <div id="likes_buttons_<%= @book.id %>">  
             <%= render 'favorites/favorite-btn', book: @book %>
           </div>
-<<<<<<< HEAD
-            
           <td class="comments-count">コメント件数:<%= @book.book_comments.count %></td>
-=======
-          <td>コメント件数:<%= @book.book_comments.count %></td>
           <td class="book-evaluation" data-score="<%= @book.evaluation %>"></td>
->>>>>>> star-review
+
         </tr>
       </table>
       
-<<<<<<< HEAD
          <div class="comments_area">
-=======
-         <div id="comments_area">
->>>>>>> star-review
            <%= render 'book_comments/index', book_comments: @book_comments %>  
         </div>
            <%= render 'book_comments/form', {book_comment: @book_comment, book: @book} %>
