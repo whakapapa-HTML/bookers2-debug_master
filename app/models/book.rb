@@ -18,8 +18,13 @@ class Book < ApplicationRecord
             @book = Book.where("title LIKE ?", "%#{words}")
         elsif searches ==  "forward_match"
             @book = Book.where("title LIKE ?", "#{words}%")
-        elsif searches == "ptial_match"
+        elsif searches == "pertial_match"
             @book = Book.where("title LIKE ?", "%#{words}%")
         end
     end
+    
+    def self.categories(words)
+        @word = Book.where("category LIKE ?", "#{words}")
+    end
+
 end

@@ -58,13 +58,24 @@ class BooksController < ApplicationController
     @books = Book.order(created_at: :desc)
     @book = Book.new
     @user = current_user
+  end
+  
+  def category
+    @books = Book.categories(params[:category])
+    @book = Book.new
+    @user = current_user
+  end
+  
+  def category_books
     
+    @book = Book.new
+    @user = current_user
   end
   
   private
 
     def book_params
-      params.require(:book).permit(:title,:body,:evaluation)
+      params.require(:book).permit(:title,:body,:evaluation,:category)
     end
     
     def ensure_correct_user
@@ -73,5 +84,4 @@ class BooksController < ApplicationController
         redirect_to books_path
       end
     end
-
 end

@@ -1,6 +1,5 @@
 class SearchesController < ApplicationController
-
-
+  
   def search
     @range = params[:range]
     

@@ -18,18 +18,17 @@
           </td>
           <td><%= link_to @book.title, book_path(@book) %></td>
           <td><%= @book.body %></td>
-          <% if @book.user == current_user %>
-          <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}" %></td>
-          <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%></td>
-          <% end %>
-          <td>
-          <div id="likes_buttons_<%= @book.id %>">  
+          <td><%= @book.category %></td>
+          <td><div id="likes_buttons_<%= @book.id %>">  
             <%= render 'favorites/favorite-btn', book: @book %>
-          </div>
+          </div></td>
           <td class="comments-count">コメント件数:<%= @book.book_comments.count %></td>
           <td class="book-evaluation" data-score="<%= @book.evaluation %>"></td>
-
-        </tr>
+        <% if @book.user == current_user %>
+          <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}" %></td>
+          <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%></td>
+        <% end %>
+       </tr>
       </table>
       
          <div class="comments_area">

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'categories/category'
   get 'likes/create'
   get 'likes/destroy'
   get 'searches/search'
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
     
   resources :books do
     collection do
-      get :newest,:ascending
+      get :newest,:ascending,:category,:category_books
     end
    resource :favorites, only: [:create,:destroy] 
 
