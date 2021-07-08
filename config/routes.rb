@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     end
     
   resources :books do
+    collection do
+      get :newest,:ascending
+    end
    resource :favorites, only: [:create,:destroy] 
 
    resources :book_comments, only: [:create, :destroy]

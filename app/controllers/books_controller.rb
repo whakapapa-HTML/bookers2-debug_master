@@ -47,7 +47,20 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to books_path
   end
-
+  
+  def ascending
+    @books = Book.order(evaluation: :desc)
+    @book = Book.new
+    @user = current_user
+  end
+  
+  def newest
+    @books = Book.order(created_at: :desc)
+    @book = Book.new
+    @user = current_user
+    
+  end
+  
   private
 
     def book_params
