@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     
   resources :books do
     collection do
-      get :newest,:ascending,:category,:category_books
+      get :newest,:ascending,:category
     end
    resource :favorites, only: [:create,:destroy] 
 

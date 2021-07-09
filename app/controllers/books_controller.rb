@@ -66,11 +66,7 @@ class BooksController < ApplicationController
     @user = current_user
   end
   
-  def category_books
-    
-    @book = Book.new
-    @user = current_user
-  end
+
   
   private
 
